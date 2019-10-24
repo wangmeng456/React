@@ -2,13 +2,6 @@ import React, { Component } from 'react'
 // import PropTypes from 'prop-types';
 
 export default class Todoing extends Component {
-    constructor(){
-        super();
-        this.state = {
-            isGoing: false,
-            isGoing2: true
-        }
-    }
     render() {
         return (
             <div>
@@ -16,7 +9,7 @@ export default class Todoing extends Component {
                 <ul style={{listStyle:'none'}}>
                     {
                         this.props.todo.map((item,idx)=><li key={idx}>
-                            <input type="checkbox" checked={this.state.isGoing} onChange={()=>{this.props.doingTodo(idx)}}/>
+                            <input type="checkbox" checked={false} onChange={()=>{this.props.doingTodo(idx)}}/>
                             {item}----
                             <button onClick={()=>{this.props.delTodo(idx)}}>删除</button>
                             </li>)
@@ -26,7 +19,7 @@ export default class Todoing extends Component {
                 <ul style={{listStyle:'none'}}>
                     {
                         this.props.todo1.map((item,idx)=><li key={idx}>
-                        <input type="checkbox" checked={this.state.isGoing2} onChange={()=>{this.props.finishTodo(idx)}}/>
+                        <input type="checkbox" checked onChange={()=>{this.props.finishTodo(idx)}}/>
                         {item}----
                         <button onClick={()=>{this.props.delTodo1(idx)}}>删除</button>
                         </li>)
