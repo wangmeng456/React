@@ -5,7 +5,8 @@ export default class Todoing extends Component {
     constructor(){
         super();
         this.state = {
-            isGoing: false, 
+            isGoing: false,
+            isGoing2: true
         }
     }
     render() {
@@ -25,7 +26,7 @@ export default class Todoing extends Component {
                 <ul style={{listStyle:'none'}}>
                     {
                         this.props.todo1.map((item,idx)=><li key={idx}>
-                        <input type="checkbox" checked={this.state.isGoing} onChange={()=>{this.props.finishTodo(idx)}}/>
+                        <input type="checkbox" checked={this.state.isGoing2} onChange={()=>{this.props.finishTodo(idx)}}/>
                         {item}----
                         <button onClick={()=>{this.props.delTodo1(idx)}}>删除</button>
                         </li>)
